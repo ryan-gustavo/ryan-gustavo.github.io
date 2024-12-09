@@ -219,16 +219,20 @@ p:not(:last-of-type),
   transition: opacity 0.5s ease-in-out; /* Adiciona uma transição suave */
 }
 
+/* Estilo dos botões de contato */
 .contact-buttons {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   gap: 15px;
+  flex-wrap: wrap; /* Permite que os botões se movam para uma nova linha em telas menores */
 }
+
 .contact {
   text-align: center;
   margin-top: 10%;
 }
+
 .contact-button {
   background-color: #252931;
   color: #fff;
@@ -237,18 +241,59 @@ p:not(:last-of-type),
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.274);
   max-width: 600px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px; 
+  height: 130px; 
+  transition: background-color 0.3s ease;
 }
 
-
-
-/* Estilo dos ícones */
 .contact-button i {
   margin-right: 8px;
 }
 
+
 .contact-button:hover {
- background-color: #2b2f36;
+  background-color: #2b2f36;
 }
+
+
+@media (max-width: 768px) {
+  .contact-buttons {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .contact-button {
+    width: 50px; 
+    height: 50px; 
+    padding: 10px; 
+  }
+
+  .contact-button i {
+    margin-right: 5px; 
+  }
+}
+
+
+@media (max-width: 480px) {
+  .contact-buttons {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .contact-button {
+    width: 60px; 
+    height: 60px; 
+    margin-bottom: 10px;
+  }
+
+  .contact-button i {
+    margin-right: 0; 
+  }
+}
+
 
 p:hover {
   transform: scale(1.05);

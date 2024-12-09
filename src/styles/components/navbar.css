@@ -73,7 +73,7 @@ height: 40px;
     .navbar .navbar__content .navbar__mobile.active .mobile__links {
       display: flex;
       flex-direction: column;
-      background-color: #38005e86;
+      background-color: #00025e86;
       width: 100%;
       position: absolute;
       top: 98%;
