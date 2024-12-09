@@ -29,48 +29,55 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#sobremim">Sobre mim</a></li>
                 <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#skills">Experiencia</a></li>
                 <li><a href="#contato">Contato</a></li>
-              </ul>
-              <div class="language-selector">
-                <div class="current-language">
-                    <img src="./src/assets/language.svg" alt="Language" class="language-flag" />
-                    <img src="./src/assets/togle.svg" alt="Language" class="language-flag" />
-                    <span id="selected-language"></span>
-                    <ul class="language-dropdown">
-                      <li data-language="pt-br">
-                          <img src="./src/assets/icons8-brasil-emoji-48.png" alt="Brazilian Flag" class="language-flag" />
-                          <span></span> 
-                      </li>
-                      <li data-language="en">
-                          <img src="./src/assets/icons8-emoji-reino-unido-48.png" alt="English Flag" class="language-flag" />
-                          <span></span> 
-                      </li>
-                  </ul>
-              </div>
+                <div class="language-selector">
+                  <div class="current-language">
+                      <img src="./src/assets/language.svg" alt="Language" class="language-flag" />
+                      <img src="./src/assets/togle.svg" alt="Language" class="language-flag" />
+                      <span id="selected-language"></span>
+                      <ul class="language-dropdown">
+                        <li data-language="pt-br">
+                            <img src="./src/assets/icons8-brasil-emoji-48.png" alt="Brazilian Flag" class="language-flag" />
+                        </li>
+                        <li data-language="en">
+                            <img src="./src/assets/icons8-emoji-reino-unido-48.png" alt="English Flag" class="language-flag" />
+
+                        </li>
+                        <li data-language="es">
+                          <img src="./src/assets/icons8-espanha-emoji-48.png" alt="English Flag" class="language-flag" />
+             
+                        </li>
+                    </ul>
                 </div>
+                  </div>
+              </ul>
               <div class="navbar__mobile">
-                <img src="./src/assets/menu.svg" alt="menu" class="burguer"/>
+                <img src="./src/assets/menu.svg" alt="menu" class="burguer" />
                 <ul class="mobile__links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobremim">Sobre mim</a></li>
-                    <li><a href="#Projetos">Projetos</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <ul class="language-dropdown">
+                  <li><a href="#inicio">Inicio</a></li>
+                  <li><a href="#sobremim">Sobre mim</a></li>
+                  <li><a href="#Projetos">Projetos</a></li>
+                  <li><a href="#skills">Experiencia</a></li>
+                  <li><a href="#contato">Contato</a></li>
+                  <div class="language-selector-mobile">
+                    <ul class="language-dropdown-mobile">
                       <li data-language="pt-br">
-                          <img src="./src/assets/icons8-brasil-emoji-48.png" alt="Brazilian Flag" class="language-flag" />
-                          <span></span> 
+                        <img src="./src/assets/icons8-brasil-emoji-48.png" alt="Brazilian Flag" class="language-flag" />
+                        <span class="language-dropdown-mobile-text">PT</span>
                       </li>
                       <li data-language="en">
-                          <img src="./src/assets/icons8-emoji-reino-unido-48.png" alt="English Flag" class="language-flag" />
-                          <span></span> 
+                        <img src="./src/assets/icons8-emoji-reino-unido-48.png" alt="English Flag" class="language-flag" />
+                        <span class="language-dropdown-mobile-text">EN</span>
                       </li>
-                  </ul>
-              </div>
+                      <li data-language="es">
+                        <img src="./src/assets/icons8-espanha-emoji-48.png" alt="English Flag" class="language-flag" />
+                        <span class="language-dropdown-mobile-text">ES</span>
+                      </li>
+                    </ul>
+                  </div>
                 </ul>
-              </div>
-            </div>
+              </div>              
           </nav>
 
           <header id="inicio" class="max-width">
@@ -378,6 +385,36 @@
 
       <script src="./src/script/navbar.js"></script>
       <script src="./src/script/language.js"></script>
+      
+      
+    
+      <script>
+ document.addEventListener("DOMContentLoaded", () => {
+  const currentLanguage = document.querySelector(".current-language");
+  const dropdown = document.querySelector(".language-dropdown-mobile");
+  const selectedLanguage = document.getElementById("selected-language");
+
+  dropdown.addEventListener("click", (e) => {
+    const target = e.target.closest("li[data-language]");
+    if (target) {
+      const language = target.dataset.language;
+      const languageText = target.querySelector("span").textContent;
+
+      // Atualizar o idioma selecionado
+      selectedLanguage.textContent = languageText;
+
+      // Redirecionar o usuário para a página do idioma selecionado
+      if (language === "pt-br") {
+               window.location.href = "";
+             } else if (language === "en") {
+               window.location.href = "en";
+             } else if (language === "es") {
+               window.location.href = "es";
+             }
+    }
+  });
+});
+      </script>
     </body>
 
     <script>
@@ -398,11 +435,14 @@
             console.log(language)
             // Atualiza o texto de idioma selecionado
             if (language === 'pt-br') {
-              selectedLanguageText.textContent = 'PT-BR'; // Mostra 'PT-BR'
-              window.location.href = 'index'; // Redireciona para o português
+              selectedLanguageText.textContent = 'PT-BR'; 
+              window.location.href = 'index.html'; 
             } else if (language === 'en') {
-              selectedLanguageText.textContent = 'EN'; // Mostra 'EN'
-              window.location.href = 'en'; // Redireciona para o inglês
+              selectedLanguageText.textContent = 'EN'; 
+              window.location.href = 'en';
+            } else if (language === 'es') {
+              selectedLanguageText.textContent = 'ES'; 
+              window.location.href = 'es';
             }
     
             // Fecha o dropdown após a seleção
@@ -416,6 +456,55 @@
         });
       });
     </script>
-    
-    
+     <script>
+      const navbar = document.querySelector('.navbar');
+const mobileNavbar = document.querySelector('.navbar__mobile');
+const button = document.querySelector('.burguer');
+
+button.addEventListener('click', function () {
+  mobileNavbar.classList.toggle('active');
+});
+
+window.addEventListener('scroll', function () {
+  if (this.window.pageYOffset > 0) return navbar.classList.add('active');
+  return navbar.classList.remove('active');
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const currentLanguage = document.querySelector(".current-language");
+  const dropdown = document.querySelector(".language-dropdown");
+  const selectedLanguage = document.getElementById("selected-language");
+
+  currentLanguage.addEventListener("click", () => {
+    dropdown.classList.toggle("hidden");
+  });
+
+  dropdown.addEventListener("click", (e) => {
+    const target = e.target.closest("li[data-language]");
+    if (target) {
+      const language = target.dataset.language;
+      const languageText = target.querySelector("span").textContent;
+
+      // Update the selected language
+      selectedLanguage.textContent = languageText;
+
+      // Hide the dropdown
+      dropdown.classList.add("hidden");
+
+      // Perform any language-switching logic here
+      console.log(`Language switched to: ${language}`);
+    }
+  });
+
+  // Close dropdown if clicked outside
+  document.addEventListener("click", (e) => {
+    if (!currentLanguage.contains(e.target)) {
+      dropdown.classList.add("hidden");
+    }
+  });
+});
+
+     </script>
+
+
 </html>
