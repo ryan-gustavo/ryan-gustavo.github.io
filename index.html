@@ -17,6 +17,7 @@
     
         <link rel="icon" href="./src/assets/page_icon.svg">
     <link rel="stylesheet" href="./src/styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Ryan Gustavo</title>
     </head>
     <body>
@@ -352,7 +353,7 @@
 
             <section id="contato" class="projects max-width"></section>
            <div class="contact">
-                <h1 class="sobremim-title">Contato</h2>
+                <h1 class="sobremim-title">Contato</h1>
                 <p>Quer entrar em contato comigo?</p>
                 <div class="contact-buttons">
                   <a href="https://discord.com/users/852880352313868298" target="_blank" class="contact-button discord">
@@ -371,6 +372,14 @@
           </div>
         </div>
 
+        <div class="contact">
+        <h1 class="sobremim-title">Email</h1>
+        <div id="custom-alert" class="custom-alert hidden">
+          <p id="copied-email-text">E-mail copiado: <span id="copied-email"></span></p>
+        </div>
+        <a href="#" class="copy-mail" data-email="contato@ryangustavo.site"><p>contato@ryangustavo.site</p></a>
+        <h9 class="click-to-copy">Clique para copiar</h9>
+        </div>
           </section>
 
           <footer id="footer">
@@ -385,6 +394,7 @@
 
       <script src="./src/script/navbar.js"></script>
       <script src="./src/script/language.js"></script>
+      <script src="./src/script/copy-mail.js"></script>
       
       
     

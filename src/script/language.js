@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Atualiza o texto de idioma selecionado
       if (language === 'pt-br') {
         selectedLanguageText.textContent = 'PT-BR'; // Mostra 'PT-BR'
-        window.location.href = ''; // Redireciona para o português
+        window.location.href = '/'; // Redireciona para o português
       } else if (language === 'en') {
         selectedLanguageText.textContent = 'EN'; // Mostra 'EN'
         window.location.href = 'en'; // Redireciona para o inglês
