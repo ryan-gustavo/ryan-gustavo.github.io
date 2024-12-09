@@ -20,10 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {
       // Atualiza o texto de idioma selecionado
       if (language === 'pt-br') {
         selectedLanguageText.textContent = 'PT-BR'; // Mostra 'PT-BR'
-        window.location.href = 'index.html'; // Redireciona para o português
+        window.location.href = ''; // Redireciona para o português
       } else if (language === 'en') {
         selectedLanguageText.textContent = 'EN'; // Mostra 'EN'
-        window.location.href = 'en.html'; // Redireciona para o inglês
+        window.location.href = 'en'; // Redireciona para o inglês
+      }
+      else if (language === 'es') {
+        selectedLanguageText.textContent = 'ES'; // Mostra 'ES'
+        window.location.href = 'es'; // Redireciona para o espanhol
       }
 
       // Fecha o dropdown após a seleção
