@@ -293,8 +293,7 @@ p:not(:last-of-type),
   }
 
   .image img {
-    width: 80px;
-    height: auto;
+   display: none;
   }
 }
 
@@ -446,8 +445,10 @@ p:hover {
   }
 }
 
-@keyframes animation {
-
+@media (max-width: 767px) {
+  .image-projetos {
+    display: none;
+  }
 }
 
 #reference {
