@@ -259,7 +259,12 @@ p:not(:last-of-type),
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
+  body {
+    font-size: 1.6rem;
+    margin-top: 15rem;
+    background: linear-gradient(93deg, rgb(8, 0, 54) 0%, rgb(0, 0, 0) 100%);
+  }
   .contact-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
