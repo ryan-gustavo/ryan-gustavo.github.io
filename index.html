@@ -55,7 +55,7 @@
               </ul>
               <div class="navbar__mobile">
                 <img src="./src/assets/menu.svg" alt="menu" class="burguer" />
-                <ul class="mobile__links">
+                <ul id="mobileMenu" class="mobile__links">
                   <li><a href="#inicio">Inicio</a></li>
                   <li><a href="#sobremim">Sobre mim</a></li>
                   <li><a href="#Projetos">Projetos</a></li>
@@ -123,13 +123,17 @@
                   
                     <p>
                       <h3 class="sobremim-text">
-                      Olá, me chamo Ryan Gustavo e atualmente sou desenvolvedor de software full-stack em Aracaju - Sergipe.
-                      Desde criança, sou apaixonado por programação e hacking. Comecei a programar em Lua aos 13 anos, o que despertou meu amor por essa profissão. Também me considero um hacker ético, pois busco ajudar pessoas identificando falhas e vulnerabilidades críticas em seus projetos e aplicações, além de aprimorar constantemente minhas próprias habilidades.
+                        Olá, chamo-me Ryan Gustavo e atualmente sou desenvolvedor de software full-stack em Aracaju, Sergipe.
                     </h3>
                     </p>
                     <p>
                       <h3 class="sobremim-text">
-                        Atualmente, estou focado em me especializar no desenvolvimento backend (área onde comecei), mas também possuo conhecimentos em frontend. Dedico-me diariamente a aprender coisas novas e a aplicar esses conhecimentos em projetos pessoais e na ajuda a amigos e outras pessoas que solicitam meu apoio.
+                        Desde criança, sou apaixonado por programação e hacking. Comecei a programar em Lua aos 13 anos, o que despertou meu amor por essa profissão. Também me considero um hacker ético, pois busco ajudar pessoas identificando falhas e vulnerabilidades críticas em seus projetos e aplicações, além de aprimorar constantemente minhas próprias habilidades.
+                      </h3>
+                    </p>
+                    <p>
+                      <h3 class="sobremim-text">                        
+                        Atualmente, estou focado em me especializar no desenvolvimento backend (área onde comecei), mas também possuo conhecimentos em frontend. Dedico-me diariamente a aprender coisas novas e aplicar esses conhecimentos em projetos pessoais e na ajuda a amigos e outras pessoas que solicitam meu apoio.
                       </h3>
                     </p>
                   </div>
@@ -425,6 +429,27 @@
   });
 });
       </script>
+
+
+
+<script>
+  const burgerMenu = document.getElementById('burgerMenu');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  burgerMenu.addEventListener('click', () => {
+      burgerMenu.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+  });
+
+  // Fechar menu ao clicar em um link
+  document.querySelectorAll('.mobile__links a').forEach(link => {
+      link.addEventListener('click', () => {
+          burgerMenu.classList.remove('active');
+          mobileMenu.classList.remove('active');
+      });
+  });
+</script>
+
     </body>
 
     <script>

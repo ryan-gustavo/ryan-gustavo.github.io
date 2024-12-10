@@ -66,6 +66,7 @@ h1:hover {
 
 
 .projects-caixa {
+  position: relative;
   background-color: #252931;
   color: #fff;
   padding: 25px;
@@ -73,7 +74,10 @@ h1:hover {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.274);
   max-width: 600px;
   margin: 0 auto;
+  border: 5px solid transparent;
 }
+
+
 .projects-text {
   font-family: Helvetica;
   font-size: 15px; 
@@ -224,6 +228,7 @@ p:not(:last-of-type),
   margin-top: 30px;
   display: flex;
   justify-content: center;
+  box-shadow: #252931;
   gap: 15px;
   flex-wrap: wrap; /* Permite que os botões se movam para uma nova linha em telas menores */
 }
@@ -238,7 +243,7 @@ p:not(:last-of-type),
   color: #fff;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.274);
+  box-shadow: 2px 1px 3px 2px rgb(62, 61, 73);
   max-width: 600px;
   margin: 0 auto;
   display: flex;
@@ -246,17 +251,44 @@ p:not(:last-of-type),
   align-items: center;
   width: 130px; 
   height: 130px; 
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .contact-button i {
   margin-right: 8px;
+  position: relative;
+  z-index: 1;
 }
-
 
 .contact-button:hover {
-  background-color: #2b2f36;
+  box-shadow: 1px 1px 10px 10px rgba(142, 142, 155, 0.226);
 }
+
+
+
+.contact-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(102, 102, 138, 0.493),
+    transparent
+  );
+  transition: all 650ms;
+}
+
+.contact-button:hover:before {
+  left: 100%;
+}
+
+
 
 
 @media (max-width: 868px) {
@@ -455,7 +487,49 @@ p:hover {
     display: none;
   }
 }
+@keyframes box-right {
+  0% {
+     transform: translateX(-100%);
+  }
 
+  100% {
+     transform: translateX(100%);
+  }
+
+}
+
+@keyframes box-top {
+  0% {
+     transform: translateY(100%);
+  }
+
+  100% {
+     transform: translateY(-100%);
+  }
+
+}
+
+@keyframes box-left {
+  0% {
+     transform: translateX(100%);
+  }
+
+  100% {
+     transform: translateX(-100%);
+  }
+
+}
+
+@keyframes box-bottom {
+  0% {
+     transform: translateY(-100%);
+  }
+
+  100% {
+     transform: translateY(100%);
+  }
+
+}
 #reference {
   color: #ee69ff;
 }
